@@ -66,7 +66,7 @@ async function save() {
         <div absolute text-sm left-0 bottom-0>
           D{{ dayNo }}
         </div>
-        <div>handle.antfu.me</div>
+        <div>handle.yuiffy.com</div>
         <div absolute text-sm right-0 bottom-0>
           {{ meta.answer ? 'X' : tries.length }}/10
         </div>
