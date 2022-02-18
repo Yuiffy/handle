@@ -3,7 +3,13 @@ import { START_DATE, TRIES_LIMIT, parseWord as _parseWord, testAnswer as _testAn
 import { useNumberTone as _useNumberTone, inputMode, meta, tries } from './storage'
 import { getAnswerOfDay } from './answers'
 
-export const now = useNow({ interval: 1000 })
+export const nowDefault = useNow({ interval: 1000 })
+export const now = computed(() => {
+  const date = nowDefault.value;
+  const timezoneOffsetMinute = date.getTimezoneOffset();
+  const newTime = date.getTime() - timezoneOffsetMinute*60*1000 + 8 * 60 * 1000; // 把date里存的utc时间换算成北京时间
+  return new Date(newTime);
+})
 export const isDark = useDark()
 export const showHint = ref(false)
 export const showSettings = ref(false)
@@ -25,7 +31,7 @@ export const useNumberTone = computed(() => {
 
 const params = new URLSearchParams(window.location.search)
 export const isDev = params.get('dev') === 'hey'
-export const daySince = useDebounce(computed(() => Math.floor((+now.value - +START_DATE) / 86400000)))
+export const daySince = useDebounce(computed(() => Math.floor((+now.value.getTime() - +START_DATE.getTime()) / 86400000)))
 export const dayNo = computed(() => +(params.get('d') || daySince.value))
 export const answer = computed(() =>
   params.get('word')
