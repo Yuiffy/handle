@@ -2,6 +2,7 @@
 import { dayNo, useMask } from '~/state'
 import { meta, tries } from '~/storage'
 import { t } from '~/i18n'
+import { TRIES_LIMIT } from '~/logic/constants'
 
 const isIOS = /iPad|iPhone|iPod/.test(navigator.platform) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
 
@@ -68,7 +69,7 @@ async function save() {
         </div>
         <div>handle.yuiffy.com</div>
         <div absolute text-sm right-0 bottom-0>
-          {{ meta.answer ? 'X' : tries.length }}/10
+          {{ meta.answer ? 'X' : tries.length }}/{{TRIES_LIMIT}}
         </div>
       </div>
     </div>

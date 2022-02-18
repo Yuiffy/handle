@@ -2,11 +2,12 @@
 import { answer, dayNo, parseWord, testAnswer } from '~/state'
 import { meta, tries } from '~/storage'
 import { t } from '~/i18n'
+import {TRIES_LIMIT} from "~/logic";
 
 const isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)
 
 const text = computed(() =>
-  `${t('name')} ${dayNo.value} ${meta.value.answer ? 'X' : tries.value.length}/10\n\n${
+  `${t('name')} ${dayNo.value} ${meta.value.answer ? 'X' : tries.value.length}/${TRIES_LIMIT}\n\n${
     tries.value
       .map((word) => {
         const parsed = parseWord(word, answer.value.word)
