@@ -1,14 +1,20 @@
 import type { ParsedChar } from './logic'
-import { START_DATE, TRIES_LIMIT, parseWord as _parseWord, testAnswer as _testAnswer, checkPass, getHint } from './logic'
+import {
+  START_DATE,
+  TRIES_LIMIT,
+  parseWord as _parseWord,
+  testAnswer as _testAnswer,
+  checkPass,
+  getHint,
+  convertToBeijingTimezone
+} from './logic'
 import { useNumberTone as _useNumberTone, inputMode, meta, tries } from './storage'
 import { getAnswerOfDay } from './answers'
 
 export const nowDefault = useNow({ interval: 1000 })
 export const now = computed(() => {
   const date = nowDefault.value;
-  const timezoneOffsetMinute = date.getTimezoneOffset();
-  const newTime = date.getTime() - timezoneOffsetMinute*60*1000 + 8 * 60 * 1000; // 把date里存的utc时间换算成北京时间
-  return new Date(newTime);
+  return convertToBeijingTimezone(date);
 })
 export const isDark = useDark()
 export const showHint = ref(false)
