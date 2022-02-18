@@ -28,7 +28,7 @@ const text = computed(() =>
           })
           .join('')
       })
-      .join('\n')}\n\nhandle.antfu.me`,
+      .join('\n')}\n\nhandle.yuiffy.com`,
 )
 const share = useShare(computed(() => ({
   title: t('name'),
