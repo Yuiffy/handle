@@ -4,6 +4,7 @@ import { t } from '~/i18n'
 import { START_DATE } from '~/logic'
 
 const ms = computed(() => 86400000 - (+now.value.getTime() - +START_DATE.getTime()) % 86400000)
+// console.log({now: now.value, START_DATE, nowDefault: nowDefault.value, ms, cha: ((+now.value.getTime() - +START_DATE.getTime()) % 86400000) / 3600000});
 const formatted = computed(() => {
   const h = Math.floor((ms.value % 86400000) / 3600000)
   const m = Math.floor((ms.value % 3600000) / 60000)
