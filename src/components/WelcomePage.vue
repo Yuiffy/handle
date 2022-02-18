@@ -2,6 +2,7 @@
 import { isDark, showHelp, showVariants, useMask } from '~/state'
 import { initialized, inputMode } from '~/storage'
 import { t } from '~/i18n'
+import { TRIES_LIMIT } from '~/logic/constants'
 
 function start() {
   showHelp.value = false
@@ -40,8 +41,11 @@ const final = computed(() => ({ py: 'uo', zy: 'ㄨㄛ', sp: 'o' }[inputMode.valu
       <b>{{ t('rule') }}</b>
     </p>
 
-    <p>本版本为娱乐改版，猜的词不是成语。原版请访问：<a href='https://handle.antfu.me/'>handle.antfu.me</a>。</p>
-    <p>{{ t('intro-1') }} <b text-ok>{{ t('intro-2') }}</b>。</p>
+    <p style="color: red">
+      本版本为娱乐改版，猜的词不是成语。原版请访问：
+      <a style="text-decoration: underline" href="https://handle.antfu.me/">handle.antfu.me</a>。
+    </p>
+    <p>{{ t('intro-1', [TRIES_LIMIT]) }} <b text-ok>{{ t('intro-2') }}</b>。</p>
     <p>{{ t('intro-3') }}</p>
     <div h-1px w-10 border="b base" m4 />
 

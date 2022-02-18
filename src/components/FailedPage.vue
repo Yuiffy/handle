@@ -2,6 +2,7 @@
 import { showFailed } from '~/state'
 import { meta } from '~/storage'
 import { t } from '~/i18n'
+import { TRIES_LIMIT } from '~/logic/constants'
 
 function revealAnswer() {
   showFailed.value = false
@@ -14,7 +15,7 @@ function revealAnswer() {
   <div p5 flex="~ col center">
     <div i-carbon-face-dizzy text-5xl op50 m4 />
     <div>
-      {{ t('failed-1') }}<br><br>
+      {{ t('failed-1', [TRIES_LIMIT]) }}<br><br>
       {{ t('failed-2') }}<br>
       {{ t('failed-3') }}
     </div>
