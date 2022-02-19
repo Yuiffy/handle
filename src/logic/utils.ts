@@ -131,11 +131,11 @@ export function getPinyin(word: string) {
 
 // 转换到北京时间（把date对象本身的timestamp变为当前北京时间，也就是比正常的utc多8）
 export function convertToBeijingTimezone(date: Date) {
-  const timezoneOffsetMinute = date.getTimezoneOffset();
+  // const timezoneOffsetMinute = date.getTimezoneOffset();
   const newTime = date.getTime()
       // + timezoneOffsetMinute * 60 * 1000
       + 8 * 60 * 60 * 1000; // 把date里存的utc时间换算成北京时间
   const ret = new Date(newTime);
-  console.log('convertToBeijingTimezone', {before: date, next: ret, timezoneOffsetMinute});
+  // console.log('convertToBeijingTimezone', {before: date, next: ret, timezoneOffsetMinute});
   return ret;
 }
