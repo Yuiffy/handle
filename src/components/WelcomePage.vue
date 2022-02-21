@@ -41,10 +41,19 @@ const final = computed(() => ({ py: 'uo', zy: 'ㄨㄛ', sp: 'o' }[inputMode.valu
       <b>{{ t('rule') }}</b>
     </p>
 
-    <p style="color: red">
-      本版本为娱乐改版，猜的词不是成语。原版请访问：
-      <a style="text-decoration: underline" href="https://handle.antfu.me/">handle.antfu.me</a>。
-    </p>
+      <p text-mis>
+        本版本为娱乐改版，猜的词不是成语，一般是ACG相关。
+      </p>
+    <b text-mis>
+      提示里写了词语范围，如果觉得难度过高，可以用其缩小范围。
+    </b>
+      <b text-ok>
+        原版猜成语请访问：
+        <a style="text-decoration: underline" href="https://handle.antfu.me/">handle.antfu.me</a>。
+      </b>
+
+    <div h-1px w-10 border="b base" m4 />
+
     <p>{{ t('intro-1', [TRIES_LIMIT]) }} <b text-ok>{{ t('intro-2') }}</b>。</p>
     <p>{{ t('intro-3') }}</p>
     <div h-1px w-10 border="b base" m4 />
@@ -90,9 +99,9 @@ const final = computed(() => ({ py: 'uo', zy: 'ㄨㄛ', sp: 'o' }[inputMode.valu
       <span op40> & </span>
       <a op50 hover:op80 href="https://twitter.com/iiiiiiines_____" target="_blank">Inès</a>
     </div>
-    <a href="https://github.com/antfu/handle" target="_blank" flex="~ center gap-1" op50 hover:op80>
+    <a href="https://github.com/yuiffy/handle" target="_blank" flex="~ center gap-1" op50 hover:op80>
       <div i-carbon-logo-github />
-      Source Code
+      Source Code (fork)
     </a>
   </div>
 </template>

@@ -71,5 +71,8 @@
   "win-no-hint-count": "无提示获胜次数",
   "win-rate": "获胜几率",
   "zhuyin": "注音",
-  "ziyin": "字音"
+  "ziyin": "字音",
+  "hint-range": "范围：",
+  "range-hint-default-text": "ACG",
+  "range-hint-default-url": "https://zh.moegirl.org.cn"
 }

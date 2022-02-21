@@ -8,17 +8,24 @@ const masked = computed(() => ({
   ...parsed.value,
   char: '?',
 }))
+const { descriptionHintText, descriptionHintUrl } = answer.value
 </script>
 
 <template>
   <div p8 flex="~ col gap-4" items-center>
     <p><b>D{{ dayNo }}</b></p>
-    <div>{{ t('hint-note') }} <b>{{ meta.hintLevel === 2 ? t('hanzi'): t('ziyin') }}</b></div>
-    <CharBlock :char="meta.hintLevel === 2 ? parsed : masked" />
+    <div v-if="meta.hintLevel >= 1">
+      {{ t('hint-range') }}<a :href="descriptionHintUrl" target="_blank" style="text-decoration: underline">{{ descriptionHintText }}</a>
+    </div>
+    <template  v-if="meta.hintLevel >= 2">
+      <div>{{ t('hint-note') }} <b>{{ meta.hintLevel >= 3 ? t('hanzi'): t('ziyin') }}</b></div>
+      <CharBlock :char="meta.hintLevel >= 3 ? parsed : masked" />
+    </template>
+
     <button
-      v-if="meta.hintLevel !== 2"
+      v-if="meta.hintLevel < 3"
       class="btn bg-mis"
-      @click="meta.hintLevel = 2"
+      @click="meta.hintLevel++"
     >
       {{ t('more-hint') }}
     </button>

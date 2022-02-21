@@ -44,6 +44,8 @@ export const answer = computed(() =>
     ? {
       word: params.get('word')!,
       hint: getHint(params.get('word')!),
+      descriptionHintText: params.get('hintDesc')!,
+      descriptionHintUrl: params.get('hintUrl')!,
     }
     : getAnswerOfDay(dayNo.value),
 )
