@@ -15,6 +15,8 @@ declare module 'vue' {
     Navbar: typeof import('./src/components/Navbar.vue')['default']
     NoFuturePlay: typeof import('./src/components/NoFuturePlay.vue')['default']
     Play: typeof import('./src/components/Play.vue')['default']
+    PrivacyNotes: typeof import('./src/components/PrivacyNotes.vue')['default']
+    ResultFooter: typeof import('./src/components/ResultFooter.vue')['default']
     Settings: typeof import('./src/components/Settings.vue')['default']
     ShareButton: typeof import('./src/components/ShareButton.vue')['default']
     ToggleMask: typeof import('./src/components/ToggleMask.vue')['default']
@@ -22,6 +24,7 @@ declare module 'vue' {
     VariantLinks: typeof import('./src/components/VariantLinks.vue')['default']
     WelcomePage: typeof import('./src/components/WelcomePage.vue')['default']
     WordBlocks: typeof import('./src/components/WordBlocks.vue')['default']
+    WorldCompare: typeof import('./src/components/WorldCompare.vue')['default']
   }
 }
 

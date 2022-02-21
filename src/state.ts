@@ -26,6 +26,7 @@ export const showDashboard = ref(false)
 export const showVariants = ref(false)
 export const useMask = ref(false)
 export const showCheatSheet = ref(false)
+export const showPrivacyNotes = ref(false)
 
 export const useNumberTone = computed(() => {
   if (inputMode.value === 'sp')
