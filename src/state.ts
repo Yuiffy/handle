@@ -6,15 +6,15 @@ import {
   testAnswer as _testAnswer,
   checkPass,
   getHint,
-  convertToBeijingTimezone
+  convertToBeijingTimezone,
 } from './logic'
 import { useNumberTone as _useNumberTone, inputMode, meta, tries } from './storage'
 import { getAnswerOfDay } from './answers'
 
 export const nowDefault = useNow({ interval: 1000 })
 export const now = computed(() => {
-  const date = nowDefault.value;
-  return convertToBeijingTimezone(date);
+  const date = nowDefault.value
+  return convertToBeijingTimezone(date)
 })
 export const isDark = useDark()
 export const showHint = ref(false)
@@ -39,7 +39,7 @@ export const useNumberTone = computed(() => {
 const params = new URLSearchParams(window.location.search)
 export const isDev = params.get('dev') === 'hey'
 export const daySince = useDebounce(computed(() => Math.floor((+now.value.getTime() - +START_DATE.getTime()) / 86400000)))
-export const dayNo = computed(() => +(params.get('d') || daySince.value))
+export const dayNo = ref(+(params.get('d') || daySince.value))
 export const answer = computed(() =>
   params.get('word')
     ? {
