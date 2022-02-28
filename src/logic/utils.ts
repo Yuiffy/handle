@@ -129,6 +129,24 @@ export function getPinyin(word: string) {
   return Pinyin(simplifiedWord, { style: Pinyin.STYLE_TONE2 }).map(i => i[0])
 }
 
+const numberChar = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九']
+const tens = ['', '十', '百', '千']
+
+export function numberToHanzi(number: number) {
+  const digits = Array.from(number.toString()).map(i => +i)
+  const chars = digits.map((i, idx) => {
+    const unit = i !== 0 ? tens[digits.length - 1 - idx] : ''
+    return numberChar[i] + unit
+  })
+  const str = chars.join('')
+  return str
+    .replace('一十', '十')
+    .replace('一百', '百')
+    .replace('二十', '廿')
+    .replace(/零+/, '零')
+    .replace(/(.)零$/, '$1')
+}
+
 // 转换到北京时间（把date对象本身的timestamp变为当前北京时间，也就是比正常的utc多8）
 export function convertToBeijingTimezone(date: Date) {
   // const timezoneOffsetMinute = date.getTimezoneOffset();

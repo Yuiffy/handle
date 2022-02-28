@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { answer, dayNo, hint, parseWord } from '~/state'
+import { answer, dayNoHanzi, hint, parseWord } from '~/state'
 import { meta } from '~/storage'
 import { t } from '~/i18n'
 
@@ -13,7 +13,7 @@ const { descriptionHintText, descriptionHintUrl } = answer.value
 
 <template>
   <div p8 flex="~ col gap-4" items-center>
-    <p><b>D{{ dayNo }}</b></p>
+    <p><b>{{ dayNoHanzi }}</b></p>
     <div v-if="meta.hintLevel >= 1">
       {{ t('hint-range') }}<a :href="descriptionHintUrl" target="_blank" style="text-decoration: underline">{{ descriptionHintText }}</a>
     </div>
@@ -21,7 +21,6 @@ const { descriptionHintText, descriptionHintUrl } = answer.value
       <div>{{ t('hint-note') }} <b>{{ meta.hintLevel >= 3 ? t('hanzi'): t('ziyin') }}</b></div>
       <CharBlock :char="meta.hintLevel >= 3 ? parsed : masked" />
     </template>
-
     <button
       v-if="meta.hintLevel < 3"
       class="btn bg-mis"
