@@ -6,3 +6,5 @@ START_DATE.setUTCHours(0, 0, 0, 0); // 把date内存储的utc时间戳设为0，
 export { START_DATE }
 export const RANDOM_SEED = 'handle'
 export const DAYS_PLAY_BACK = 3
+export const DEPLOY_HOST = 'handle.antfu.me'
+export const NETLIFY_FUNCTION_HOST = '/.netlify/functions'
