@@ -3,11 +3,7 @@ import { START_DATE, TRIES_LIMIT, WORD_LENGTH, parseWord as _parseWord, testAnsw
 import { useNumberTone as _useNumberTone, inputMode, meta, tries } from './storage'
 import { getAnswerOfDay } from './answers'
 
-export const nowDefault = useNow({ interval: 1000 })
-export const now = computed(() => {
-  const date = nowDefault.value
-  return convertToBeijingTimezone(date)
-})
+export const now = useNow({ interval: 1000 })
 export const isDark = useDark()
 export const showHint = ref(false)
 export const showSettings = ref(false)
