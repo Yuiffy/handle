@@ -1,8 +1,9 @@
 {
   "average-durations": "平均用時",
-  "average-tries-count": "平均嘗試次數",
+  "average-tries-count": "平均嘗試",
   "back-today": "回到今天",
   "cheatsheet": "速查表",
+  "check-assist": "檢查輔助",
   "colorblind-mode": "色彩增強",
   "continue": "繼續遊戲",
   "correct-answer": "正確答案",
@@ -20,6 +21,7 @@
   "failed-3": "你也可以隨時嘗試並查看答案",
   "finals": "韻母",
   "games-count": "遊戲次數",
+  "guess-dist": "嘗試次數分佈",
   "hanzi": "漢字",
   "happy-new-year-2022": "虎年快樂！",
   "hard-mode": "禁用提示",
@@ -79,8 +81,8 @@
   "update-tip": "* 新題目每日零時更新",
   "view-answer": "查看答案",
   "win-count": "獲勝次數",
-  "win-no-hint-count": "無提示獲勝次數",
-  "win-rate": "獲勝機率",
+  "win-no-hint-count": "無提示",
+  "win-rate": "勝率",
   "zhuyin": "注音",
   "ziyin": "字音"
 }

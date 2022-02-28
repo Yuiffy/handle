@@ -10,6 +10,7 @@ export const inputMode = useStorage<InputMode>('handle-mode', preferZhuyin ? 'zy
 export const useNumberTone = useStorage('handle-number-tone', false)
 export const colorblind = useStorage('handle-colorblind', false)
 export const hardMode = useStorage('handle-hard-mode', false)
+export const checkAssist = useStorage('handle-check-assist', false)
 export const accpetCollecting = useStorage('handle-accept-collecting', true)
 
 export const meta = computed<TriesMeta>({
@@ -67,7 +68,8 @@ export function pauseTimer() {
 }
 
 export const gamesCount = computed(() => Object.values(history.value).filter(m => m.passed || m.answer || m.failed).length)
-export const passedCount = computed(() => Object.values(history.value).filter(m => m.passed).length)
+export const passedTries = computed(() => Object.values(history.value).filter(m => m.passed))
+export const passedCount = computed(() => passedTries.value.length)
 export const noHintPassedCount = computed(() => Object.values(history.value).filter(m => m.passed && !m.hint).length)
 export const historyTriesCount = computed(() => Object.values(history.value).filter(m => m.passed || m.answer || m.failed).map(m => m.tries?.length || 0).reduce((a, b) => a + b, 0))
 
