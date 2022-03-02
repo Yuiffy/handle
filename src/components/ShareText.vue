@@ -30,7 +30,7 @@ const lines = computed(() => {
     '',
     ...table,
     '',
-    'handle.antfu.me',
+    t('my-url'),
   ]
 })
 
