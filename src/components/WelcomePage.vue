@@ -32,9 +32,7 @@ const final = computed(() => ({ py: 'uo', zy: 'ㄨㄛ', sp: 'o' }[inputMode.valu
       </button>
     </div>
 
-    <div text-3xl font-serif tracking-2 pl2>
-      {{ t('name') }}
-    </div>
+    <AppName h="2.5rem" />
     <div mt--1 op50 text-sm>
       {{ t('description') }}
     </div>
@@ -80,12 +78,14 @@ const final = computed(() => ({ py: 'uo', zy: 'ㄨㄛ', sp: 'o' }[inputMode.valu
 
     <div h-1px w-10 border="b base" m4 />
 
-    <button btn tracking-widest p="x4 y2" @click="start()">
-      {{ t('start') }}
+    <button btn p="x4 y2" @click="start()">
+      <span tracking-1 pl1>{{ t('start') }}</span>
     </button>
     <div op50>
       {{ t('update-tip') }}
     </div>
+
+    <div h-1px w-10 border="b base" m4 />
 
     <Settings />
 
