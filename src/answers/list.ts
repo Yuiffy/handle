@@ -65,10 +65,12 @@ const RANGE_HINT = {
   gameCharacter: ['游戏角色'],
   uper: ['up主/主播'],
   game: ['电子游戏', 'https://indienova.com/gamedb'],
+  gameRelated: ['游戏相关'],
   jumpManga: ['jump少年漫相关'],
   genshin: ['原神相关', 'https://wiki.biligame.com/ys/'],
   easy: ['不好说，不过没范围也能猜', 'https://www.baidu.com'],
   liuzhou: ['柳州相关', 'http://www.dianping.com/liuzhou'],
+  food: ['食物', 'https://www.baidu.com'],
 }
 
 export const _2022_FEB = prepare(28, [
@@ -137,6 +139,14 @@ export const _2022_MARCH = prepare(31, seedShuffle([
   ['强袭自由', '强'],
   ['火箭头槌', '火', RANGE_HINT.pokemon],
 ], '2022-03'))
+
+export const _2022_APRIL = prepare(5, seedShuffle([
+  ['莫斯提马', '莫', RANGE_HINT.mrfz],
+  ['莫德雷德', '莫', RANGE_HINT.gameCharacter],
+  ['莫里亚蒂', '莫', RANGE_HINT.gameCharacter],
+  ['剑刃风暴', '风', RANGE_HINT.gameRelated],
+  ['麦趣鸡盒', '鸡', RANGE_HINT.food],
+], '2022-04'))
 
 export const answers: (any[] | string[] | (string | string[])[])[] = [
   ..._PRE,
